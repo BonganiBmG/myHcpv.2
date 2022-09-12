@@ -6,8 +6,13 @@ const windowHeight = Dimensions.get('window').height;
 
 const Login = ({ navigation }) => {
     return (
-        <SafeAreaView>
+        <SafeAreaView style={styles.container}>
+
+            <Text style={{fontWeight: '100', fontSize: 34, marginBottom: 10}}>Welcome Back !</Text>
+            <Text style={{marginBottom: 10, fontSize: 18}}>Sign in to continue</Text>
+
             <View style={styles.form}>
+
             <TextInput
                 style={styles.input}
                 placeholder="Email"
@@ -28,6 +33,7 @@ const Login = ({ navigation }) => {
                 >
                 <Text style={{color:'white'}}>Login</Text>
                 </TouchableOpacity>
+                <Text style={{marginBottom: 10, fontSize: 12}}>New user? Sign up here</Text>
         </SafeAreaView>
         
     );
@@ -53,7 +59,7 @@ const styles = StyleSheet.create({
     button: {
         alignItems: "center",
         backgroundColor: "#1c87e5",
-        padding: 10,
+        padding: 30,
         margin: 30,
         borderRadius: 20,
       
