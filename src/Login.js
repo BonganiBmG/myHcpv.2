@@ -33,7 +33,7 @@ const Login = ({ navigation }) => {
                 >
                 <Text style={{color:'white'}}>Login</Text>
                 </TouchableOpacity>
-                <Text style={{marginBottom: 10, fontSize: 12}}>New user? Sign up here</Text>
+                <Text onPress={()=> navigation.navigate('SignUp')} style={{marginBottom: 10, fontSize: 12}}>New user? Sign up here</Text>
         </SafeAreaView>
         
     );
