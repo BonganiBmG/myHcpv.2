@@ -16,7 +16,8 @@ const Home = ({ navigation }) => {
                 renderItem={({ item }) => {
 
                     return (
-                        <TouchableOpacity onPress={() => navigation.navigate('Details')} style={{ margin: 20, height: windowHeight * 0.15, backgroundColor:item.bgColor, borderRadius: 5 }}>
+                        <TouchableOpacity style={{ margin: 20, height: windowHeight * 0.15, backgroundColor:item.bgColor, borderRadius: 5,  }}
+                            onPress={() => navigation.navigate('Details')} >
                             <View style={{backgroundColor:item.bgColor}}>
                                 <Text style={styles.category}>
                                     {item.category}
