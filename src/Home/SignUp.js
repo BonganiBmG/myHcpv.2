@@ -74,9 +74,9 @@ const styles = StyleSheet.create({
     },
     input:{
         
-            height: 40,
+            height: 45,
             margin: 12,
-            borderBottomWidth: 1,
+            borderBottomWidth: 2,
             padding: 10,
           
     },
@@ -85,13 +85,13 @@ const styles = StyleSheet.create({
         backgroundColor: "#1c87e5",
         padding: 30,
         margin: 30,
-        borderRadius: 20,
+        borderRadius: 30,
       
         
       },
     form:{
         margin: 30,
-        paddingTop: windowHeight/6
+        paddingTop: windowHeight/25
 
     }
 })
