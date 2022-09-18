@@ -1,8 +1,9 @@
 
 import { StyleSheet, Text, View, Dimensions, TouchableOpacity, Image, } from 'react-native'
 import React, { Component,  useState, useEffect  } from 'react';
-import MapView from 'react-native-maps';
+import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
+import ServiceList from './ServiceList';
 //import { NavigationContainer } from '@react-navigation/native';
 //import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -13,6 +14,7 @@ import * as Location from 'expo-location';
 const Details = () => {
   const [currentLocation, setCurrentLocation] = useState(null);
   const [errorMsg, setErrorMsg] = useState(null);
+  const hcps = ServiceList
 
   useEffect(() => {
     (async () => {
@@ -33,7 +35,25 @@ const Details = () => {
     text = errorMsg;
   } else if (currentLocation) {
     text = JSON.stringify(currentLocation);
-  }  
+  }
+  
+  const renderMarker = () =>{
+    return(
+    
+      hcps.map((marker, index) =>{
+        <Marker
+        key={index}
+        coordinate={{latitude: marker.coord.latitude, longitude: marker.coord.longitude}}
+        title= {marker.name}
+        
+        
+        />
+        
+      })
+    
+      
+    )
+  }
 
 
   return (
@@ -47,6 +67,8 @@ const Details = () => {
 
 
           }}
+
+          showsUserLocation={true}
       
       
       />
