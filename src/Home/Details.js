@@ -1,6 +1,6 @@
 
 import { StyleSheet, Text, View, Dimensions, TouchableOpacity, Image, } from 'react-native'
-import React, { Component,  useState, useEffect  } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
 import ServiceList from './ServiceList';
@@ -36,45 +36,64 @@ const Details = () => {
   } else if (currentLocation) {
     text = JSON.stringify(currentLocation);
   }
-  
-  const renderMarker = () =>{
-    return(
-    
-      hcps.map((marker, index) =>{
-        <Marker
-        key={index}
-        coordinate={{latitude: marker.coord.latitude, longitude: marker.coord.longitude}}
-        title= {marker.name}
-        
-        
-        />
-        
-      })
-    
-      
+
+  const renderMarker = () => {
+    return (
+
+      <View>
+
+        {
+          hcps.map((marker, index) => {
+            <Marker
+              key={index}
+              coordinate={{ latitude: marker.coord.latitude, longitude: marker.coord.longitude }}
+              title={marker.name}
+
+
+            />
+
+          })
+
+        }
+
+      </View>
+
+
     )
   }
 
 
   return (
     <View style={styles.container}>
-      <MapView style={styles.map} 
-          initialRegion={{
-            latitude: -26.110390,
-            longitude: 28.053440,
-            latitudeDelta: 0.8,
-            longitudeDelta: 0.1333,
+
+      {hcps != null ?
+
+        <View>
+
+          <MapView style={styles.map}
+            initialRegion={{
+              latitude: -26.110390,
+              longitude: 28.053440,
+              latitudeDelta: 0.0922,
+              longitudeDelta: 0.0421,
+            }}
+            showsUserLocation={true}>
 
 
-          }}
 
-          showsUserLocation={true}
-      
-      
-      />
-    </View>
-  )
-}
+          </MapView>
+
+        </View>
+
+      : <Loader />
+
+    }
+   </View>
+  );
+
+  };
+
+
 
 
 
@@ -83,6 +102,7 @@ const styles = StyleSheet.create({
     width: Dimensions.get('window').width,
     height: Dimensions.get('window').height,
   },
-})
+
+});
 
 export default Details;
