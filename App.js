@@ -6,6 +6,8 @@ import Home from './src/Home/Home';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Details from './src/Home/Details';
 import SignUp from './src/Home/SignUp';
+//import { ViewPropTypes } from 'deprecated-react-native-prop-types';
+
 
 
 
