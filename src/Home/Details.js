@@ -1,11 +1,11 @@
 
-import { StyleSheet, Text, View, Dimensions, TouchableOpacity, Image, } from 'react-native'
+import { StyleSheet, Text, View, Dimensions, TouchableOpacity, Image,  } from 'react-native'
 import React, { Component, useState, useEffect, } from 'react';
 import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
 import ServiceList from './ServiceList';
 import Loader from '../Loader';
-import Carousel from 'react-native-snap-carousel';
+//import Carousel from 'react-native-snap-carousel';
 
 
 
@@ -77,7 +77,7 @@ const Details = () => {
 
   const renderCard = ({ item, index }) => {
     return (
-      <View style={{ backgroundColor: 'white', borderRadius: 18, padding: 10, height: 150, display: 'flex', flexDirection: 'row' }}>
+      <View style={{ backgroundColor: 'white', borderRadius: 18, padding: 10, height: 10, display: 'flex', flexDirection: 'row' }}>
         <View style={{ margin: 10 }}>
           <Text style={{ fontSize: 20, width: Dimensions.get('window').width / 2, }}>{item.name}</Text>
           
@@ -113,6 +113,7 @@ const Details = () => {
             showsUserLocation={true}
 
           >
+          
 
             <RenderMarker />
 
@@ -120,13 +121,13 @@ const Details = () => {
           </MapView>
 
           <View>
-            <Carousel
-              ref={(c) => { refCarousel = c; }}
-              data={hcps}
-              renderItem={renderCard}
-              sliderWidth={Dimensions.get('window').width}
-              itemWidth={300}
-              containerCustomStyle={styles.Carousel}
+            <Text
+              //ref={(c) => { refCarousel = c; }}
+              //data={hcps}
+              //renderItem={renderCard}
+              //sliderWidth={Dimensions.get('window').width}
+              //itemWidth={300}
+              //containerCustomStyle={styles.Carousel}
 
             />
 
@@ -161,11 +162,11 @@ const styles = StyleSheet.create({
     height: Dimensions.get('window').height,
   },
 
-  Carousel: {
-    position: 'absolute',
-    bottom: 0,
-    height: Dimensions.get('window').height / 3,
-  }
+ //Carousel: {
+    //position: 'absolute',
+    //bottom: 0,
+    //height: Dimensions.get('window').height / 3,
+  //}
 
 });
 
